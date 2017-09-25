@@ -1,0 +1,18 @@
+<table>
+  <h2> Game 3 Roster </h2>
+  <tr>
+    <th> Player Name </th>
+    <th> Actions </th>
+  </tr>
+  <tr *ngFor = "let player of players">
+    <td>
+      {{player.name}}
+    </td>
+    <td> 
+      <button *ngIf = "player.game3 == true" class = "green" (click) = 'change(player._id)'>Playing</button>
+      <button *ngIf = "player.game3 == false" (click) = 'change(player._id)'>Playing</button>
+      <button *ngIf = "player.game3 == false" class = "red" (click) = 'change(player._id)'>Not Playing </button>
+      <button *ngIf = "player.game3 == true" (click) = 'change(player._id)'> Not Playing </button>
+    </td>
+  </tr>
+</table>

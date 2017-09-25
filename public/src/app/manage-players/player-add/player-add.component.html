@@ -1,0 +1,27 @@
+<p>
+  player-add works!
+</p>
+<form #formData = 'ngForm' (submit) = "addPlayer()">
+  <p> Name: <input
+  name = "name"
+  type = "text"
+  minlength="2"
+  required
+  [(ngModel)] = 'player.name'
+  #name = 'ngModel'> </p>
+  <p *ngIf = 'name.errors' class = 'red'> *The name has errors*</p>
+
+  Position: <input
+  name = "position"
+  type = 'text'
+  minlength = "2"
+  required
+  [(ngModel)] = 'player.position'
+  #position = 'ngModel'>
+  <p *ngIf = 'position.errors' class = 'red'> *The position field has errors*</p>
+
+  <p><input type = "submit" value = "Create Player" [disabled] = "!formData.valid"></p>
+
+
+
+
